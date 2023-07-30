@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="tools">
+    <div class="logo">
+      Logo
+      <img ngSrc="assets/logo.svg" height="32" width="32"/>
+    </div>
+
+    <div class="toolbar">
+      <div class="inputWrapper">
+        <input type="text" class="input" [formControl]="title" (blur)="save()">
+        <span *ngIf="!title.valid" class="hint">Title is required</span>
+      </div>
+
+      <div class="controls">
+        controls
+      </div>
+    </div>
+  </div>
+
+  <div class="profile">Profile</div>
+</div>
