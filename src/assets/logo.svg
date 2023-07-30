@@ -1,0 +1,18 @@
+<svg id="Logo" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <style>.cls-1 {
+      fill: #f08705;
+    }
+
+    .cls-2 {
+      fill: #fff;
+    }
+    </style>
+  </defs>
+  <rect class="cls-1" width="150" height="150" rx="6"/>
+  <rect class="cls-2" x="88.5" y="51.75" width="9" height="45" transform="translate(-24.67 56.45) rotate(-30)"/>
+  <rect class="cls-2" x="34.5" y="69.75" width="45" height="9" transform="translate(-35.8 86.49) rotate(-60)"/>
+  <rect class="cls-2" x="52.5" y="23.25" width="45" height="37.5" rx="6"/>
+  <rect class="cls-2" x="85.5" y="89.25" width="45" height="37.5" rx="6"/>
+  <rect class="cls-2" x="19.5" y="89.25" width="45" height="37.5" rx="6"/>
+</svg>
