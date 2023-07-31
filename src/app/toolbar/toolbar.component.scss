@@ -3,33 +3,44 @@
   height: 4rem;
   justify-content: space-between;
   align-items: center;
+  padding: 0.75rem;
 }
 
 .tools {
-
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .logo {
-
+  display: flex;
 }
 
 .toolbar {
-
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .input {
+  font-size: 1.125rem;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+  width: 10rem;
 
   &Wrapper {
-
+    display: flex;
   }
 }
 
-.hint {
-
+.controls {
+  display: flex;
+  gap: 0.5rem;
 }
 
-.controls {
-
+.control {
+  font-size: 0.75rem;
 }
 
 .profile {

@@ -1,18 +1,21 @@
 <div class="container">
   <div class="tools">
     <div class="logo">
-      Logo
-      <img ngSrc="assets/logo.svg" height="32" width="32"/>
+      <img ngSrc="assets/logo.svg" height="32" width="32" alt="Logo"/>
     </div>
 
     <div class="toolbar">
       <div class="inputWrapper">
         <input type="text" class="input" [formControl]="title" (blur)="save()">
-        <span *ngIf="!title.valid" class="hint">Title is required</span>
       </div>
 
       <div class="controls">
-        controls
+        <button class="control" (click)="openMenu($event, MenuCategory.FILE)">File</button>
+        <button class="control" (click)="openMenu($event, MenuCategory.EDIT)">Edit</button>
+        <button class="control" (click)="openMenu($event, MenuCategory.VIEW)">View</button>
+        <button class="control" (click)="openMenu($event, MenuCategory.ARRANGE)">Arrange</button>
+        <button class="control" (click)="openMenu($event, MenuCategory.EXTRAS)">Extras</button>
+        <button class="control" (click)="openMenu($event, MenuCategory.HELP)">Help</button>
       </div>
     </div>
   </div>
