@@ -1,0 +1,23 @@
+.wrapper {
+  position: absolute;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background-color: #333;
+  padding: 0.25rem;
+  border: 1px solid #555;
+  border-radius: 0.2rem;
+}
+
+.button {
+  color: #fff;
+  text-align: left;
+  padding: 0.25rem 0.5rem 0.25rem 2rem;
+
+  &:hover {
+    background-color: #555;
+  }
+}

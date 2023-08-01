@@ -1,19 +1,21 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { MenuCategory } from '@/types/toolbar';
+import { MenuControlEvent, MenuItem } from '@/types/toolbar';
+import { menu } from './constants';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
-  MenuCategory = MenuCategory;
+  readonly Menu = menu;
 
   title = new FormControl('');
   isMenuOpen = false;
-  menuCategory: MenuCategory | null = null;
+  menuItems?: MenuItem[];
+  anchor: ElementRef<HTMLButtonElement>;
 
   save() {
     if (!this.title.value) {
@@ -23,15 +25,15 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     console.log('title', this.title.value);
   }
 
-  openMenu(event: MouseEvent, category: MenuCategory) {
-    event.stopPropagation();
+  openMenu({ category, elementRef }: MenuControlEvent) {
+    this.anchor = elementRef;
     this.isMenuOpen = true;
-    this.menuCategory = category;
+    this.menuItems = menu.find((menu) => category === menu.category)?.menuItems;
   }
 
   closeMenu() {
     this.isMenuOpen = false;
-    this.menuCategory = null;
+    this.menuItems = undefined;
   }
 
   ngOnInit() {

@@ -10,12 +10,13 @@
       </div>
 
       <div class="controls">
-        <button class="control" (click)="openMenu($event, MenuCategory.FILE)">File</button>
-        <button class="control" (click)="openMenu($event, MenuCategory.EDIT)">Edit</button>
-        <button class="control" (click)="openMenu($event, MenuCategory.VIEW)">View</button>
-        <button class="control" (click)="openMenu($event, MenuCategory.ARRANGE)">Arrange</button>
-        <button class="control" (click)="openMenu($event, MenuCategory.EXTRAS)">Extras</button>
-        <button class="control" (click)="openMenu($event, MenuCategory.HELP)">Help</button>
+        <app-menu-button
+          *ngFor="let menu of Menu"
+          [title]="menu.title"
+          [category]="menu.category"
+          (openMenuEvent)="openMenu($event)"
+        />
+        <app-menu *ngIf="isMenuOpen" [menu-items]="menuItems" [anchor]="anchor" />
       </div>
     </div>
   </div>
