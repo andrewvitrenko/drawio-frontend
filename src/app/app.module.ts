@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from '@/modules/toolbar/components/menu/menu.component';
 import { MenuButtonComponent } from '@/modules/toolbar/components/menu-button/menu-button.component';
 import { ProfileComponent } from '@/modules/toolbar/components/profile/profile.component';
+import { MainComponent } from './modules/main/main.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,16 @@ import { ProfileComponent } from '@/modules/toolbar/components/profile/profile.c
     ToolbarComponent,
     MenuComponent,
     MenuButtonComponent,
-    ProfileComponent
+    ProfileComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     NgOptimizedImage,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

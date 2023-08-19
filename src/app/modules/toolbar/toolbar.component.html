@@ -16,10 +16,12 @@
           [category]="menu.category"
           (openMenuEvent)="openMenu($event)"
         />
-        <app-menu *ngIf="isMenuOpen" [menu-items]="menuItems" [anchor]="anchor" />
+        <app-menu *ngIf="isMenuOpen" [menu-items]="menuItems" [anchor]="anchor"/>
       </div>
     </div>
   </div>
 
-  <div class="profile">Profile</div>
+  <div class="profile">
+    <app-profile/>
+  </div>
 </div>
