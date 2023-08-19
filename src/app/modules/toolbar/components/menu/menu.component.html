@@ -1,0 +1,5 @@
+<div class="wrapper" [ngStyle]="{top: coordinates.y + 'px', left: coordinates.x + 'px'}">
+  <div class="container">
+    <button class="button" *ngFor="let item of items">{{ item.title }}</button>
+  </div>
+</div>
