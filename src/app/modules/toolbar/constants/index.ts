@@ -1,4 +1,4 @@
-import { Menu, MenuCategory } from '@/types/toolbar';
+import { Menu, MenuCategory } from '../types';
 
 export const menu: Menu[] = [
   {

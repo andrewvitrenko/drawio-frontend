@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { MenuControlEvent, MenuItem } from '@/types/toolbar';
+import { MenuControlEvent, MenuItem } from './types';
 import { menu } from './constants';
 
 @Component({
