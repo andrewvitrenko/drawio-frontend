@@ -1,10 +1,11 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
+
 import { MenuCoordinates, MenuItem } from '@/modules/toolbar/types';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnChanges {
   @Input('menu-items') items?: MenuItem[];
