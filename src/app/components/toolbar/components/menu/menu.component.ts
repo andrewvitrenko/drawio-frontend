@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnChanges } from '@angular/core';
-import { MenuCoordinates, MenuItem } from '@/modules/toolbar/types';
+import { MenuCoordinates, MenuItem } from '@/components/toolbar/types';
 
 @Component({
   selector: 'app-menu',
