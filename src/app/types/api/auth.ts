@@ -3,7 +3,7 @@ export interface LoginPayload {
   password: string;
 }
 
-export interface LoginResponse {
+export interface AuthResponse {
   access_token: string;
   refresh_token: string;
 }

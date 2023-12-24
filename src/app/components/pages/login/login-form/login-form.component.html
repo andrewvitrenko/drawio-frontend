@@ -16,7 +16,7 @@
         <mat-form-field class="form-field" appearance="fill">
           <mat-label>Password</mat-label>
           <input formControlName="password" matInput required placeholder="Enter password" [type]="showPassword ? 'text' : 'password'" />
-          <button mat-icon-button matIconSuffix (click)="toggleShowPassword()">
+          <button mat-icon-button matIconSuffix type="button" (click)="toggleShowPassword()">
             <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
           </button>
           <mat-error *ngIf="isPasswordValid()">

@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '@/services/auth.service';
-import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from '@/constants/local-storage';
 import { ROUTES } from '@/types/routes';
-
-const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+import { PASSWORD_REGEX } from '@/constants/form';
 
 @Component({
   selector: 'app-login-form',
@@ -22,15 +20,12 @@ export class LoginForm {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  async login() {
+  login() {
     if (this.loginForm.invalid) return;
 
     const { email, password } = this.loginForm.value;
 
-    this.authService.login({ email: email!, password: password! }).subscribe(async ({ access_token, refresh_token }) => {
-      localStorage.setItem(ACCESS_TOKEN_KEY, access_token);
-      localStorage.setItem(REFRESH_TOKEN_KEY, refresh_token);
-
+    this.authService.login({ email: email!, password: password! }).subscribe(async () => {
       await this.router.navigate([ROUTES.HOME]);
     });
 
