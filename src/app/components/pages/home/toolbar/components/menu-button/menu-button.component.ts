@@ -1,5 +1,5 @@
-import { menu } from '@/components/toolbar/constants';
-import { MenuCategory, MenuControlEvent } from '@/components/toolbar/types';
+import { menu } from '@/components/pages/home/toolbar/constants';
+import { MenuCategory, MenuControlEvent } from '@/components/pages/home/toolbar/types';
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
