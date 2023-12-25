@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { figuresPreview } from '@/modules/figures-sidebar/constants';
+import { figuresPreview } from '@/components/pages/home/figures-sidebar/constants';
 
 @Component({
   selector: 'app-figures-sidebar',

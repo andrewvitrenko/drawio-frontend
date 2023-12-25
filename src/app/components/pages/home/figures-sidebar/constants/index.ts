@@ -1,4 +1,4 @@
-import { FigurePreview } from '@/modules/figures-sidebar/types';
+import { FigurePreview } from '@/components/pages/home/figures-sidebar/types';
 import { FigureShape } from '@/types/figure';
 
 export const figuresPreview: FigurePreview[] = [

@@ -22,6 +22,5 @@ import { LoginPage } from '@/pages/login/login.page';
     MatButtonModule,
     MatIconModule,
   ],
-  exports: [LoginPage],
 })
 export class LoginModule {}

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { FigurePreview } from '@/modules/figures-sidebar/types';
+import { FigurePreview } from '@/components/pages/home/figures-sidebar/types';
 
 @Component({
   selector: 'app-figure-preview',
