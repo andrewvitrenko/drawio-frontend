@@ -7,8 +7,11 @@ import {
   ViewChild,
 } from '@angular/core';
 
-import { menu } from '@/modules/toolbar/constants';
-import { MenuCategory, MenuControlEvent } from '@/modules/toolbar/types';
+import { menu } from '@/components/pages/home/toolbar/constants';
+import {
+  MenuCategory,
+  MenuControlEvent,
+} from '@/components/pages/home/toolbar/types';
 
 @Component({
   selector: 'app-menu-button',

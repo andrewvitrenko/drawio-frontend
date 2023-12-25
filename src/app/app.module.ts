@@ -1,17 +1,23 @@
 import { NgOptimizedImage } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MenuComponent } from '@/modules/toolbar/components/menu/menu.component';
-import { MenuButtonComponent } from '@/modules/toolbar/components/menu-button/menu-button.component';
-import { ProfileComponent } from '@/modules/toolbar/components/profile/profile.component';
-import { ToolbarComponent } from '@/modules/toolbar/toolbar.component';
+import { MainComponent } from '@/components/pages/home/main/main.component';
+import { MenuComponent } from '@/components/pages/home/toolbar/components/menu/menu.component';
+import { MenuButtonComponent } from '@/components/pages/home/toolbar/components/menu-button/menu-button.component';
+import { ProfileComponent } from '@/components/pages/home/toolbar/components/profile/profile.component';
+import { ToolbarComponent } from '@/components/pages/home/toolbar/toolbar.component';
+import { AppRoutingModule } from '@/modules/app-routing/app-routing.module';
+import { HomePage } from '@/modules/app-routing/pages/home/home.page';
+import { LoginModule } from '@/modules/login/login.module';
+import { RegisterModule } from '@/modules/register/register.module';
 
 import { AppComponent } from './app.component';
 import { FigurePreviewComponent } from './modules/figures-sidebar/components/figure-preview/figure-preview.component';
 import { FiguresSidebarComponent } from './modules/figures-sidebar/figures-sidebar.component';
-import { MainComponent } from './modules/main/main.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +26,21 @@ import { MainComponent } from './modules/main/main.component';
     MenuComponent,
     MenuButtonComponent,
     ProfileComponent,
+    HomePage,
     MainComponent,
     FiguresSidebarComponent,
     FigurePreviewComponent,
   ],
-  imports: [BrowserModule, NgOptimizedImage, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    NgOptimizedImage,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    LoginModule,
+    RegisterModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
