@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { PASSWORD_REGEX } from '@/constants/form';
 import { AuthService } from '@/services/auth.service';
-import { Router } from '@angular/router';
 import { RegisterPayload } from '@/types/api/auth';
 import { ROUTES } from '@/types/routes';
 
@@ -12,14 +19,26 @@ import { ROUTES } from '@/types/routes';
   styleUrls: ['./register-form.component.scss'],
 })
 export class RegisterForm {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
-  form = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    name: new FormControl(''),
-    password: new FormControl('', [Validators.required, Validators.pattern(PASSWORD_REGEX)]),
-    confirmPassword: new FormControl('', [Validators.required, Validators.pattern(PASSWORD_REGEX)]),
-  }, { validators: this.confirmPasswordValidator });
+  form = new FormGroup(
+    {
+      email: new FormControl('', [Validators.required, Validators.email]),
+      name: new FormControl(''),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.pattern(PASSWORD_REGEX),
+      ]),
+      confirmPassword: new FormControl('', [
+        Validators.required,
+        Validators.pattern(PASSWORD_REGEX),
+      ]),
+    },
+    { validators: this.confirmPasswordValidator },
+  );
 
   showPassword = false;
 
@@ -40,7 +59,7 @@ export class RegisterForm {
 
     this.authService.register(payload).subscribe(async () => {
       await this.router.navigate([ROUTES.HOME]);
-    })
+    });
   }
 
   isEmailInvalid(): boolean {
@@ -95,9 +114,12 @@ export class RegisterForm {
     const passwordErrors = password?.errors;
     const confirmPasswordErrors = confirmPassword?.errors;
 
-    if (password?.value && confirmPassword?.value && password.value !== confirmPassword.value) {
-
-      const error = { 'passwordMismatch': true };
+    if (
+      password?.value &&
+      confirmPassword?.value &&
+      password.value !== confirmPassword.value
+    ) {
+      const error = { passwordMismatch: true };
 
       confirmPassword?.setErrors({ ...confirmPasswordErrors, ...error });
       password?.setErrors({ ...passwordErrors, ...error });
@@ -107,12 +129,18 @@ export class RegisterForm {
 
     if (passwordErrors) {
       delete passwordErrors['passwordMismatch'];
-      password?.setErrors(Object.keys(passwordErrors).length ? passwordErrors : null);
+      password?.setErrors(
+        Object.keys(passwordErrors).length ? passwordErrors : null,
+      );
     }
 
     if (confirmPasswordErrors) {
       delete confirmPasswordErrors['passwordMismatch'];
-      confirmPassword?.setErrors(Object.keys(confirmPasswordErrors).length ? confirmPasswordErrors : null);
+      confirmPassword?.setErrors(
+        Object.keys(confirmPasswordErrors).length
+          ? confirmPasswordErrors
+          : null,
+      );
     }
     return null;
   }

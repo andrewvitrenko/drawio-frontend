@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginPayload, AuthResponse, RegisterPayload } from '@/types/api/auth';
-import { environment } from '../../environments/environment';
-import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from '@/constants/local-storage';
+import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
+
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from '@/constants/local-storage';
+import { AuthResponse, LoginPayload, RegisterPayload } from '@/types/api/auth';
+
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -11,29 +13,27 @@ import { map } from 'rxjs';
 export class AuthService {
   baseUrl = `${environment.backendHost}/auth`;
 
-
-  constructor(private httpClient: HttpClient) {
-  }
+  constructor(private httpClient: HttpClient) {}
 
   login(payload: LoginPayload) {
-    return this.httpClient.post<AuthResponse>(`${this.baseUrl}/login`, payload)
+    return this.httpClient
+      .post<AuthResponse>(`${this.baseUrl}/login`, payload)
       .pipe(
         map((data) => {
-            this.setTokens(data);
-            return data;
-          },
-        ),
+          this.setTokens(data);
+          return data;
+        }),
       );
   }
 
   register(payload: RegisterPayload) {
-    return this.httpClient.post<AuthResponse>(`${this.baseUrl}/signup`, payload)
+    return this.httpClient
+      .post<AuthResponse>(`${this.baseUrl}/signup`, payload)
       .pipe(
         map((data) => {
-            this.setTokens(data);
-            return data;
-          },
-        ),
+          this.setTokens(data);
+          return data;
+        }),
       );
   }
 

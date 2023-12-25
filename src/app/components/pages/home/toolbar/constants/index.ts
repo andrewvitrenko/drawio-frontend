@@ -5,47 +5,23 @@ export const menu: Menu[] = [
     title: 'File',
     category: MenuCategory.FILE,
     menuItems: [
-      {
-        title: 'New',
-      },
+      { title: 'New' },
       {
         title: 'Open from',
         nestedItems: [
-          {
-            title: 'Google drive',
-          },
-          {
-            title: 'OneDrive',
-          },
-          {
-            title: 'Dropbox',
-          },
-          {
-            title: 'GitHub',
-          },
-          {
-            title: 'GitLab',
-          },
-          {
-            title: 'Browser',
-          },
-          {
-            title: 'Device',
-          },
-          {
-            title: 'URL',
-          },
+          { title: 'Google drive' },
+          { title: 'OneDrive' },
+          { title: 'Dropbox' },
+          { title: 'GitHub' },
+          { title: 'GitLab' },
+          { title: 'Browser' },
+          { title: 'Device' },
+          { title: 'URL' },
         ],
       },
-      {
-        title: 'Open recent',
-      },
-      {
-        title: 'Save',
-      },
-      {
-        title: 'Save As',
-      },
+      { title: 'Open recent' },
+      { title: 'Save' },
+      { title: 'Save As' },
     ],
   },
   {
@@ -92,7 +68,8 @@ export const menu: Menu[] = [
       },
       {
         title: 'Save As',
-      }],
+      },
+    ],
   },
   {
     title: 'View',
@@ -138,7 +115,8 @@ export const menu: Menu[] = [
       },
       {
         title: 'Save As',
-      }],
+      },
+    ],
   },
   {
     title: 'Arrange',
@@ -184,7 +162,8 @@ export const menu: Menu[] = [
       },
       {
         title: 'Save As',
-      }],
+      },
+    ],
   },
   {
     title: 'Extras',
@@ -230,7 +209,8 @@ export const menu: Menu[] = [
       },
       {
         title: 'Save As',
-      }],
+      },
+    ],
   },
   {
     title: 'Help',
@@ -276,6 +256,7 @@ export const menu: Menu[] = [
       },
       {
         title: 'Save As',
-      }],
+      },
+    ],
   },
 ];

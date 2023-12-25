@@ -1,11 +1,22 @@
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
+
 import { menu } from '@/components/pages/home/toolbar/constants';
-import { MenuCategory, MenuControlEvent } from '@/components/pages/home/toolbar/types';
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  MenuCategory,
+  MenuControlEvent,
+} from '@/components/pages/home/toolbar/types';
 
 @Component({
   selector: 'app-menu-button',
   templateUrl: './menu-button.component.html',
-  styleUrls: ['./menu-button.component.scss']
+  styleUrls: ['./menu-button.component.scss'],
 })
 export class MenuButtonComponent {
   @Input('title') title: string = '';
@@ -16,7 +27,10 @@ export class MenuButtonComponent {
 
   openMenu(event: MouseEvent) {
     event.stopPropagation();
-    this.openMenuEvent.emit({ category: this.category, elementRef: this.buttonRef });
+    this.openMenuEvent.emit({
+      category: this.category,
+      elementRef: this.buttonRef,
+    });
   }
 
   protected readonly menu = menu;

@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginPage } from '@/pages/login/login.page';
-import { LoginForm } from '@/components/pages/login/login-form/login-form.component';
-import { MatCardModule } from '@angular/material/card';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+
+import { LoginForm } from '@/components/pages/login/login-form/login-form.component';
+import { LoginPage } from '@/pages/login/login.page';
 
 @NgModule({
   declarations: [LoginPage, LoginForm],
@@ -21,6 +22,5 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatIconModule,
   ],
-  exports: [LoginPage]
 })
-export class LoginModule { }
+export class LoginModule {}
